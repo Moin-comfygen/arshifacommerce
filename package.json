@@ -1,0 +1,36 @@
+{
+  "name": "product360-research",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-icons.mjs && vite build && vite build --config vite.content.config.ts",
+    "build:extension": "npm run build",
+    "build:site": "npm run package && node scripts/copy-site-download.mjs && vite build --config vite.site.config.ts && node scripts/generate-site-seo.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "vite",
+    "lint": "eslint .",
+    "package": "npm run build && node scripts/package-extension.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "fake-indexeddb": "^6.0.0",
+    "fflate": "^0.8.2",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.5",
+    "vitest": "^5.0.5"
+  }
+}
